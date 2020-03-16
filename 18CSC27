@@ -1,0 +1,37 @@
+#To read the csv file from excel
+> data<-read.csv(file.choose(),header=T)
+> data
+
+#To display heading of the data
+> names(data)
+ [1] ""MILES"  "INCOME" "AGE"    "KIDS"  
+
+> y=data$income
+> x=data$age
+> plot(x,y)
+> plot(x,y,ylab="income",xlab="age")  #plotting graph
+>save.image("C:\\Users\\koushika\\Desktop\\II assgn")  #saving the graph
+> abline(lm(y~x))
+> cor(y,x)  # correlation
+[1] 0.9997891
+> cor.test(y,x)
+
+> model=lm(y~x) #Regression
+> model 
+> summary(model)
+
+> confint(model)
+                    2.5 %       97.5 %
+(Intercept) -1.079641e+04 6880.2646210
+x            9.599221e-01    0.9642551
+
+#To find binmoial distribution
+#n=324, p=0.5
+> dbinom(20,324,0.5) #p(x=20)
+
+> # we want p(20<=x<=25)
+> dbinom(20:25,30,0.5)
+> sum(dbinom(20:25,30,0.5))
+
+> # cdf
+> pbinom(25,30,0.5)
